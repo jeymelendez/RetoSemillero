@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <style>
+        .register-account{
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            background-clip: border-box;
+            background-origin: padding-box;
+            background-size: auto auto;
+            background-size: cover;
+            padding: 200px 0 150px;
+            padding-top: 200px;
+            padding-right: 0px;
+            padding-bottom: 150px;
+            padding-left: 0px;
+            width: auto;
+
+    }
+
+    /*Login Form CSS*/
+    .login-form input{
+      width: 100%;
+      border: 1px solid #dddddd;
+      padding: 0.7em;
+      margin: 0.6em 0;
+      border-radius: 0;
+      margin-bottom: 15px;
+    }
+    .login-form{
+      margin-bottom: 30px;
+    }
+    .signform {
+      background-color: transparent;
+      padding-bottom: 40px;
+      padding-top: 35px;
+      margin: 0 auto;
+      margin-top: auto;
+    }
+    .bts {
+      padding: 2em;
+      margin: 0.6em 0;
+      margin-top:
+    }
+    .bts-a:hover{
+      color: #79b42b;
+      text-decoration: none;
+      background: white;
+    }
+    .bts span {
+      text-align: center;
+      font-size: .9em;
+      font-family: 'Arimo', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .login-form input:focus, .login-form input:active {
+      border-bottom: 0px solid #79B42B;
+      outline: none;
+    }
+    .subbt:hover {
+      background-color: #79b42b;
+    }
+
+    .right a {
+      position: relative;
+      color: transparent;
+      text-decoration: none;
+      font-family: 'Arimo', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: .9em;
+      float: right;
+      margin-top:5px;
+    }
+    .headit {
+      position: relative;
+      top: -10px;
+    }
+    .headit h4{
+      color: #474646;
+    }
+    .bts a:hover{
+      text-decoration: none;
+      color: white;
+    }
+    .bts a:active{
+      color: white;
+      text-decoration: none;
+    }
+    .bts a:focus{
+      text-decoration: none;
+      color: white;
+    }
+    .headit a {
+    text-decoration: none;
+    }
+
+    .fa.fa-check-square {
+    padding-right: 19px;
+    }
+
+    form#login-form:after {
+      content: '';
+      position: absolute;
+      background: rgba(128, 128, 128, 0.3);
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 15px;
+      margin: auto;
+      height: 3.25em;
+      width: 0.1em;
+      left: 2.15em;
+
+      -moz-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+      -webkit-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+      box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+    }
+    /*Media Query */
+    @media screen  and (min-width: 1400px) {
+    .signform { width: 680px; left: 25%; }
+    }
+
+
+    @media screen  and (max-width: 1400px) and (min-width: 1230px) {
+    .signform { width: 50%; left: 25%; }
+    }
+
+    @media screen  and (max-width: 1230px) and (min-width: 1000px) {
+    .signform { width: 60%; left: 15%; }
+    }
+
+    @media screen  and (max-width: 1000px) and (min-width: 900px) {
+    .signform { width: 70%; left: 10%; }
+    }
+
+    @media screen  and (max-width: 900px) and (min-width: 750px) {
+    .signform { width: 80%; left: 8%; }
+    }
+
+    @media screen  and (max-width: 750px) and (min-width: 640px) {
+    .signform { width: 90%;
+      left: 1%;
+      }
+    }
+
+    @media screen  and (min-width: 640px) {
+      .left {
+      width: 47%;
+      display: inline-table;
+      margin-left: 20px;
+      float: right;
+      }
+      .right {
+      width: 40%;
+      display: inline-table;
+      margin-left: 50px;
+      }
+    }
+
+    @media screen  and (max-width: 640px) {
+      .left {
+        width: 100%;
+        display: inline-table;
+        margin-bottom: 25px;
+      }
+      .right {
+        width: 85%;
+        display: inline-table;
+        margin-left: 20px;
+      }
+      .signform {
+        width: 50%;
+        min-width:255px;
+      }
+      form#login-form:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+
+    }
+      form#login-form:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        height:0em;
+        width: 0em;
+        left: 0em;
+        top: 0em;
+
+      }
+    }
+
+      form#login-form::after {
+        content: '';
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 15px;
+        margin: auto;
+        height: 3.25em;
+        width: 0.1em;
+        left: 2.15em;
+        top: -2.8em;
+        -moz-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+        -webkit-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+        box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
+    }
+    }
+    @media screen  and (max-width: 640px) and (min-width: 460px) {
+    .signform {
+      left: 25%;
+       }
+    }
+    @media screen  and (max-width: 460px) and (min-width: 400px) {
+      .signform {
+       left: 20%;
+      }
+    }
+    @media screen  and (max-width: 400px) and (min-width: 320px) {
+      .signform {
+       left: 10%;
+      }
+    }
+    @media screen  and (max-width: 320px) {
+      .signform {
+       left: 1%;
+        }
+    }
+
+    </style>
+</head>
+<body id="myId">
+<section class="register-account">
+    <div class="signform">
+        <div class="right"> <h1>Registro de usuario</h1> </div>
+
+
+        <div class="left">
+            <form th:action="@{/registro}" th:object="${user}" method="post"> <!--  th:action="@{/basicAuth}" th:object="${}" method="post"   <form th:action="@{/basicAuth/login/{username} (username=${userEntity.username})}" method="get">
+     -->
+                <div class="form-group">
+                    <label  for="username"> Username </label>
+                    <input id="username"  name="username" type="text" class="form-control"
+                           required autofocus="autofocus" placeholder="Usuario" > <!--  th:field="*{username}"> -->
+                </div>
+
+                <div class="form-group">
+                    <label  for="password">Password </label>
+                    <input
+                            id="password" type="password"  name="password" class="form-control" required
+                            autofocus="autofocus" placeholder="Contraseña">
+                </div>
+
+                <div class="form-group">
+                    <label  for="type">Type authentication</label>
+                    <select id="type" name="type" class="form-control">
+                        <option value="basic">Outh Basic</option>
+                        <option value="oauth">Oauth </option>
+                        <option value="other">Another</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <input type="submit" class="form-control btn btn-primary" name="login-submit" id="login-submit"
+                                   value="Registrar Usuario" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
